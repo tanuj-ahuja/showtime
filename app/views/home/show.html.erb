@@ -1,0 +1,32 @@
+
+<div class="content">
+	<div id="poster">
+		<%= image_tag "https://image.tmdb.org/t/p/w185/#{@movie.poster_path}" %>
+	</div>
+	<div id="main">
+		<h1><%= @movie.title %></h1>
+		<p><%= @movie.overview %></p>
+
+         <% if @items==[] %>
+           <div>
+    <%= form_for(current_user.movie_relations.build) do |f| %>
+ 
+  <div><%= hidden_field_tag :movie_id, @movie.id %></div>
+    <div><%= hidden_field_tag :movie_title, @movie.title %></div>
+
+  <%= f.submit "Watched", class: "btn btn-primary" %>
+  <% end %>
+  <% else %>
+   
+   
+   <%= button_to "Unwatch",movie_relation_url(@movie.id),method: :delete, class: "btn btn-danger" %> 
+  
+  <%end %>
+
+	</div>
+	<div id="details">
+		<h6>Budget:$<%= @movie.budget %><h6>
+		<h6>Release Date:<%= @movie.release_date %><h6>
+		<h6>Runtime:<%= @movie.runtime %><h6>
+	</div>
+</div>

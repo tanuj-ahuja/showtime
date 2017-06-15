@@ -1,0 +1,27 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.content{
+padding:10px;
+margin-top:100px;
+width:800px;
+margin-left:auto;
+margin-right:auto;
+}
+
+#poster{
+	float:left;
+}
+
+#main{
+	width:580px;
+	float:right;
+}
+
+#details{
+    padding-top:30px;
+	width:150px;
+}

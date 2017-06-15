@@ -1,0 +1,18 @@
+<% @details.results.each do |movie| %>
+<% @url= "https://image.tmdb.org/t/p/w185/#{movie.poster_path}" %>
+   <tbody>
+     <tr>
+        <div>
+         <td> <%= image_tag @url %></td>
+         <td> <%= link_to movie.title ,home_path(movie.id)%>
+           </td>
+           <td>    
+              <%= movie.overview %>
+         </td>
+          
+        <td>  <%= movie.release_date %></td>
+         
+       </div>
+     </tr>
+   </tbody>
+     <%end%>

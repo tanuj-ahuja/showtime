@@ -1,0 +1,13 @@
+<h2>Friends</h2>
+<div class="content">
+<table class="table table-bordered table-striped table-hover">
+<% @friends.each do |friend| %>
+<tbody>
+<tr>
+	<td><%= link_to friend.email,friend %>
+	</td>
+	</tr>
+	</tbody>
+<% end %>
+</table>	
+</div>

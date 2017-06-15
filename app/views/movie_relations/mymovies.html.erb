@@ -1,0 +1,21 @@
+
+<div class="container">
+<h1>Movies you have watched</h1>
+<table class="table table-bordered table-striped table-hover">
+<% @movies.each do |movie| %>
+ 
+   <tbody>
+     <tr>
+        <div>
+        
+         <td> <%= link_to movie.movie_title ,home_path(movie.movie_id)%>
+           </td>
+           
+          
+        
+       </div>
+     </tr>
+   </tbody>
+     <%end%>
+     </table>
+     </div>
