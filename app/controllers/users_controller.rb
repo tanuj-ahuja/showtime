@@ -17,6 +17,13 @@ class UsersController < ApplicationController
       @movies1=current_user.movies1
       @movies2=current_user.movies2
  end
+
+   def findfriends
+   	if params[:search]
+   		@users=User.search(params[:search])
+   	end
+   end
+
     
 
    

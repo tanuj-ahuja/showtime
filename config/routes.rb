@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/toprated', to:'home#toprated'
   get '/nowshowing', to:'home#nowshowing'
   get '/upcoming', to:'home#upcoming'
-  get '/findfriends',    to:'home#findfriends'
+  get '/findfriends',    to:'users#findfriends'
   get '/search', to: 'home#search'
   get 'genre',to: 'home#genre'
   get '/friendrequest', to: 'users#confirm'

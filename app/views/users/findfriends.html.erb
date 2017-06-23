@@ -1,1 +1,6 @@
-<h1>hey</h1>
+<ol>
+	<% @users.each do |u| %>
+	  <%= u.name %>
+	  <%= u.email %>
+	  <%end%>
+</ol>

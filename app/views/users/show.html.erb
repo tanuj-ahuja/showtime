@@ -1,4 +1,5 @@
 <%= @user.email  %>
+<%= image_tag @user.picture.url if @user.picture? %>
 <% if current_user.id == @user.id %>
 <% else %>
 <% if @con1==[] && @con2==[] %>

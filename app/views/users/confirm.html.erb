@@ -1,12 +1,13 @@
-<ul>
 <div class="content">
 <% if current_user.requested_friendships ==[] %>
     <h2>No Requests</h2>
 <%else%>
+<table class="table table-bordered table-striped table-hover">
     <% current_user.requested_friendships.each do |request| %>
-    <li>
-    
-      <%= request.email %>
+ 
+    <tbody>
+      <tr>
+      <td><%= request.email %>
      
        <div style="float:right;">
       <%= button_to "Accept",  friendship_path(id: request.id), method: "put" ,class: "btn btn-primary "%>
@@ -16,8 +17,11 @@
       </div>
        <div style="clear:both;">
     </div>
-    </li>
+    </td>
+    </tr>
+    </tbody>
+
   <% end %>
+  </table>
   <%end%>
   </div>
-</ul>

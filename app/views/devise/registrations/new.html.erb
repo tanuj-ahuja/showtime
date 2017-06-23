@@ -6,8 +6,18 @@
   <%= devise_error_messages! %>
 
   <div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, class: 'form-control'  %>
+  </div>
+
+  <div>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, class: 'form-control'  %>
+  </div>
+
+  <div>
+    <%= f.label :date_of_birth %><br />
+    <%= f.date_select :date_of_birth, autofocus: true, class: 'form-control'  %>
   </div>
 
   <div class="field">
@@ -22,6 +32,11 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" , class: 'form-control' %>
   </div>
+
+  <span class="picture">
+    <%= f.label :Upload_your_picture %> 
+     <%= f.file_field :picture ,accept: 'image/jpeg,image/gif,image/png',class: 'form-control' %> 
+  </span>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

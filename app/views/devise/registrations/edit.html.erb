@@ -6,9 +6,19 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+  <div>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, class: 'form-control'  %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= f.label :date_of_birth %><br />
+    <%= f.date_select :date_of_birth, autofocus: true, class: 'form-control'  %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

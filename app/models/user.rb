@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  mount_uploader :picture, PictureUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -48,6 +49,10 @@ class User < ApplicationRecord
     user_ids="SELECT user_id FROM friendships
                WHERE friend_id=:id"
     MovieRelation.where("user_id IN (#{user_ids})",id: id)
+  end
+
+  def self.search(search)
+    where("name LIKE ?","%#{search}%")
   end
 
 
