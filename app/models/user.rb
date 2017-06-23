@@ -51,6 +51,8 @@ class User < ApplicationRecord
     MovieRelation.where("user_id IN (#{user_ids})",id: id)
   end
 
+ 
+
   def self.search(search)
     where("name LIKE ?","%#{search}%")
   end

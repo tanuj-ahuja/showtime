@@ -1,12 +1,23 @@
-<%= @user.email  %>
+<div class="content">
+<div class="poster">
 <%= image_tag @user.picture.url if @user.picture? %>
+</div>
+<div class="main">
+<strong><%= @user.email  %></strong>
+</div>
+<div class="details">
 <% if current_user.id == @user.id %>
 <% else %>
+
 <% if @con1==[] && @con2==[] %>
+
  <%= button_to "Add Friend", friendships_path(friend_id: @user), method: :post,class: "btn btn-primary" %>
  
- 
- <% else %>
-   <p>Pending/Already friends</p>
+   <% else %> 
+   <p>Friends!</p>
+
+
  <% end %>
- <% end %>
+ <% end %></div>
+ </div>
+ </div>

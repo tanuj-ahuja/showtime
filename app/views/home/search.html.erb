@@ -1,9 +1,32 @@
 <div class=container>
 <br>
 <br>
+<h2>Movies</h2>
+<% if @details==[] %>
+<h5>no results match your search</h5>
+<% else %>
 <table class="table table-bordered table-striped table-hover">
- 
-  <%= render 'home/partial' %>
+ <%= render 'home/partial' %>
 
 </table>
+<% end %>
+
+<h2>People</h2>
+<% if @users==[] %>
+<h5>no results match your search</h5>
+<% else %>
+<table class="table table-bordered table-striped table-hover">
+
+	<% @users.each do |u| %>
+	<tbody>
+	<tr>
+
+	  <td><%= u.name %></td>
+	  <td><%= link_to u.email ,u%></td>
+	  </tr>
+	  </tbody>
+	  <%end%>
+</table>
+<% end %>
 </div>
+

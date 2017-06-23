@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 		@user=User.find(params[:id])
 		@con1=Friendship.where(:user_id=>current_user.id).where(:friend_id=>params[:id])
 		@con2=Friendship.where(:friend_id=>current_user.id).where(:user_id=>params[:id])
-	
+    
 	end
 	def confirm
 	end	
@@ -21,8 +21,10 @@ class UsersController < ApplicationController
    def findfriends
    	if params[:search]
    		@users=User.search(params[:search])
-   	end
-   end
+    end
+  end
+   	
+    
 
     
 

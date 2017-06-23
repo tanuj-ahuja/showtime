@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get '/feed',to: 'users#feed'
 
 
+
   devise_for :users
   resources :users, :only => [:show]
   resources :home
