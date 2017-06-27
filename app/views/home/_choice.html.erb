@@ -1,0 +1,10 @@
+<% if @con1==[] && @con2==[] %>
+ <%= button_to "Add Friend", friendships_path(friend_id: @user), method: :post,class: "btn btn-primary",remote: true %>
+ 
+
+   <% else %> 
+   <div id="choice2">
+   <p>Friends!</p>
+   </div>
+
+ <% end %>

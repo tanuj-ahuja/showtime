@@ -8,16 +8,12 @@
 <div class="details">
 <% if current_user.id == @user.id %>
 <% else %>
-
-<% if @con1==[] && @con2==[] %>
-
- <%= button_to "Add Friend", friendships_path(friend_id: @user), method: :post,class: "btn btn-primary" %>
+<div id="choices">
+    <%= render 'home/choice' %>
+ </div>
  
-   <% else %> 
-   <p>Friends!</p>
-
-
  <% end %>
- <% end %></div>
  </div>
  </div>
+ </div>
+ 

@@ -14,6 +14,7 @@ class HomeController < ApplicationController
 		if params[:search]
         @details=Tmdb::Search.movie(params[:search])
         @users=User.search(params[:search])
+      
 	end	
 end
 

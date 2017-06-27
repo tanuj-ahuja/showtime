@@ -1,4 +1,4 @@
-
+<div id="dd">
 <div class="content">
 	<div class="poster">
 		<%= image_tag "https://image.tmdb.org/t/p/w185/#{@movie.poster_path}" %>
@@ -7,21 +7,23 @@
 		<h1><%= @movie.title %></h1>
 		<p><%= @movie.overview %></p>
 
-         <% if @items==[] %>
+<div id="watch-unwatch" >
+  <% if @items==[] %>
            
-    <%= form_for(current_user.movie_relations.build) do |f| %>
+    <%= form_for(current_user.movie_relations.build,:remote => true )do |f|%>
  
   <div><%= hidden_field_tag :movie_id, @movie.id %></div>
     <div><%= hidden_field_tag :movie_title, @movie.title %></div>
 
-  <%= f.submit "Watched", class: "btn btn-primary" %>
+  <%= f.submit "Watched", class: "btn btn-primary"%>
   <% end %>
   <% else %>
    
    
-   <%= button_to "Unwatch",movie_relation_url(@movie.id),method: :delete, class: "btn btn-danger" %> 
+   <%= button_to "Unwatch",movie_relation_url(@movie.id),method: :delete, class: "btn btn-danger",remote: true %> 
   
   <%end %>
+  </div>
   </div>
 	
 	<div class="details">
@@ -29,4 +31,5 @@
 		<h6>Release Date:<%= @movie.release_date %></h6>
 		<h6>Runtime:<%= @movie.runtime %></h6>
 	</div>
+</div>
 </div>

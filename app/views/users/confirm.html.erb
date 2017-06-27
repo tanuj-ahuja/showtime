@@ -2,26 +2,29 @@
 <% if current_user.requested_friendships ==[] %>
     <h2>No Requests</h2>
 <%else%>
-<table class="table table-bordered table-striped table-hover">
+
     <% current_user.requested_friendships.each do |request| %>
  
-    <tbody>
-      <tr>
-      <td><%= request.email %>
-     
+    
+      <div id="confirm_<%=request.id%>">
+      
+
+      <%= request.email %>
+      
        <div style="float:right;">
-      <%= button_to "Accept",  friendship_path(id: request.id), method: "put" ,class: "btn btn-primary "%>
+      <%= button_to "Accept",  friendship_path(id: request.id), method: "put" ,class: "btn btn-primary ",remote: true%>
       </div>
       <div style="float:right;">
-      <%= button_to "Decline", friendship_path(id: request.id), method: :delete , class: "btn btn-danger"%>
+      <%= button_to "Decline", friendship_path(id: request.id), method: :delete , class: "btn btn-danger",remote: true%>
       </div>
        <div style="clear:both;">
     </div>
-    </td>
-    </tr>
-    </tbody>
-
+  </div>
+    
+    
+    
+<br>
   <% end %>
-  </table>
+
   <%end%>
   </div>
