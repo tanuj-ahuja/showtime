@@ -42,14 +42,14 @@ class User < ApplicationRecord
 
   def movies1
    friend_ids="SELECT friend_id FROM friendships
-                 WHERE user_id = :id"
+                 WHERE user_id = :id AND accepted='t' "
    MovieRelation.where("user_id IN (#{friend_ids})",id: id)
   end  
 
   def movies2
     user_ids="SELECT user_id FROM friendships
-               WHERE friend_id=:id"
-    MovieRelation.where("user_id IN (#{user_ids})",id: id)
+               WHERE accepted='t' AND friend_id=:id"
+    MovieRelation.where("user_id IN (#{user_ids})" ,id: id)
   end
 
  

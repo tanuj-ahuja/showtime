@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/nowshowing', to:'home#nowshowing'
   get '/upcoming', to:'home#upcoming'
   get '/findfriends',    to:'users#findfriends'
-  get '/search', to: 'home#search',as: :home_search
+  get '/search', to: 'home#search'
   get 'genre',to: 'home#genre'
   get '/friendrequest', to: 'users#confirm'
   get '/myfriends',to: 'users#myfriends'

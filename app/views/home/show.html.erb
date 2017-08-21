@@ -8,6 +8,8 @@
 		<p><%= @movie.overview %></p>
 
 <div id="watch-unwatch" >
+ <% if Date.parse(@movie.release_date) < Date.today %>
+
   <% if @items==[] %>
            
     <%= form_for(current_user.movie_relations.build,:remote => true )do |f|%>
@@ -23,6 +25,9 @@
    <%= button_to "Unwatch",movie_relation_url(@movie.id),method: :delete, class: "btn btn-danger",remote: true %> 
   
   <%end %>
+  <% else %>
+    <h6>Not yet released!</h6>
+  <% end %>
   </div>
   </div>
 	
